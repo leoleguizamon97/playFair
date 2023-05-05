@@ -85,27 +85,13 @@ def encriptarPlayFair(cadena,mapa,matriz,modo=1):
 			crip = crip + matriz[p1[0]][p2[1]] + matriz[p2[0]][p1[1]]
 	return crip
 
-def playFair(llave,cadena,modo='e'):
+def playFair(llave,cadena,encriptar=True):
+	modo=-1
+	if encriptar:
+		modo=1
 	llaveLimpia		= limpiarLlave(llave,alfabeto)
 	matriz,mapa		= generarmatriz(llaveLimpia, list(alfabeto))
 	cadenaLimpia	= limpiarCadena(cadena,alfabeto)
-	cadenaProcesada	= encriptarPlayFair(cadenaLimpia,mapa,matriz,-1)
+	cadenaProcesada	= encriptarPlayFair(cadenaLimpia,mapa,matriz,modo)
+	return cadenaProcesada
 
-#MAIN
-clear()
-llave=input('Ingrese llave:\n')
-cadena=input('Ingrese cadena:\n')
-
-#Print (Comentar o eliminar despues)
-clear()
-print(llaveLimpia)
-print()
-print(cadenaLimpia)
-print()
-for a in matriz: print(a)
-print()
-print(mapa)
-print()
-print(llave)
-print(cadena)
-print(cadenaProcesada.upper())
