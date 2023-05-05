@@ -96,25 +96,37 @@ def playFair(llave,cadena,encriptar=True):
 
 	#Print (Comentar o eliminar despues)
 	clear()
-	print(llaveLimpia)
-	print()
-	print(cadenaLimpia)
-	print()
+	print('************** Proceso **************')
+	print(f'Llave:\t> {llaveLimpia}')
+	print('\nMatriz:\t')
 	for a in matriz: print(a)
-	print()
-	print(mapa)
-	print()
-	print(llave)
-	print(cadena)
-	print(cadenaProcesada.upper())
+	print('\nCadena en pares:\t')
+	i=0
+	scad=''
+	for a in cadenaLimpia:
+		if i==4:
+			i = 0
+			print(scad)
+			scad = ''
+		i+=1
+		scad = scad + str(a) + ' '
+	print(scad)
+	input('\nEnter para continuar: > ')
+	clear()
+	print('************* Resultados ************\n')
+	print('Llave Original: \t> '+llave)
+	print('Cadena Original:\t> '+cadena)
+	print('Cadena Procesada:\t> '+cadenaProcesada.upper())
 
 	return cadenaProcesada
 
 #MAIN
 clear()
-llave	=input('Ingrese llave:\n')
-cadena	=input('Ingrese cadena:\n')
-modo	=input('¿Que hacer?:\n[Enter: Encriptar]\n[D: Desencriptar]\n>: ')
+print('************** Inicio ***************')
+print('********** anlleguziamongu **********\n')
+llave	=input('Ingrese llave:\n> ')
+cadena	=input('\nIngrese cadena:\n> ')
+modo	=input('\n¿Que hacer?:\n\n[Enter: Encriptar]\n[D: Desencriptar]\n\n>: ')
 playFair(llave,cadena,modo.lower()!='d')
 input('\nEnter para cerrar: ')
 clear()
