@@ -93,5 +93,29 @@ def playFair(llave,cadena,encriptar=True):
 	matriz,mapa		= generarmatriz(llaveLimpia, list(alfabeto))
 	cadenaLimpia	= limpiarCadena(cadena,alfabeto)
 	cadenaProcesada	= encriptarPlayFair(cadenaLimpia,mapa,matriz,modo)
+
+	#Print (Comentar o eliminar despues)
+	clear()
+	print(llaveLimpia)
+	print()
+	print(cadenaLimpia)
+	print()
+	for a in matriz: print(a)
+	print()
+	print(mapa)
+	print()
+	print(llave)
+	print(cadena)
+	print(cadenaProcesada.upper())
+
 	return cadenaProcesada
+
+#MAIN
+clear()
+llave	=input('Ingrese llave:\n')
+cadena	=input('Ingrese cadena:\n')
+modo	=input('¿Que hacer?:\n[Enter: Encriptar]\n[D: Desencriptar]\n>: ')
+playFair(llave,cadena,modo.lower()!='d')
+input('\nEnter para cerrar: ')
+clear()
 
