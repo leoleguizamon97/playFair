@@ -3,7 +3,7 @@
 import os
 
 #Variables
-alfabeto=['a','b','c','d','e','f','g','h','i','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+alfabetoPF=['a','b','c','d','e','f','g','h','i','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 
 #Funciones
 def clear():
@@ -22,7 +22,7 @@ def limpiarLlave(llave,alfabeto):	#Limpia la llave
 			if not (c in llaveLimpia):	llaveLimpia.append(c)
 	return llaveLimpia
 
-def generarmatriz(llave,alfabeto):	#Genera la matriz de encriptaccion
+def generarMatriz(llave,alfabeto):	#Genera la matriz de encriptaccion
 	matriz=[['','','','',''],['','','','',''],['','','','',''],['','','','',''],['','','','','']]
 	mapa = {} #Diccionario
 	tLlave = len(llave)
@@ -90,9 +90,9 @@ def playFair(llave,cadena,encriptar=True):
 	modo=-1
 	if encriptar:
 		modo=1
-	llaveLimpia		= limpiarLlave(llave,alfabeto)
-	matriz,mapa		= generarmatriz(llaveLimpia, list(alfabeto))
-	cadenaLimpia	= limpiarCadena(cadena,alfabeto)
+	llaveLimpia		= limpiarLlave(llave,alfabetoPF)
+	matriz,mapa		= generarMatriz(llaveLimpia, list(alfabetoPF))
+	cadenaLimpia	= limpiarCadena(cadena,alfabetoPF)
 	cadenaProcesada	= encriptarPlayFair(cadenaLimpia,mapa,matriz,modo)
 
 	#Print (Comentar o eliminar despues)
